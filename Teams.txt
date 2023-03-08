@@ -1,0 +1,31 @@
+Natus Vincere;NaVi
+Team Spirit;TS
+Team Secret;Secret
+Team Liquid;Liquid
+Tundra ESports;Tundra
+PSG LGD;LGD
+Hokori ESports;Hokori
+Virtus Pro;VP
+Team Aster;Aster
+Thunder Awaken;Thunder
+Fnatic Gaming;Fnatic
+Evil Geniuses;EG
+Team OG;OG
+IG Vitality;IGV
+Vici Gaming;Vici
+CSKA;CSKA
+Astralis;Astralis
+MouzSports;Mouz
+Furia Sports;Furia
+Luminosity;Luminosity
+NewBee;NewBee
+Wings Gaming;Wings
+Alliance;Alliance
+TNC Predator;TNC
+EHOME;EHOME
+MVP Phoenix;MVP
+Mineski Gaming;Mineski
+Zenit;Zenit
+Barcelona;Barca
+Real Madrid;Pidrid
+Royal Never Give Up;Give Up

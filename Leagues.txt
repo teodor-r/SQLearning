@@ -1,0 +1,22 @@
+The International;Dota2
+Major Moscow;Dota2
+Major London;Dota2
+Major Boston;Dota2
+Blast Premier;CS:GO
+ESL;LoL
+MSI 2023;LoL
+Intel Cup;LoL
+Ultraliga;LoL
+European Pro Leaugue;StarCraft2
+OpenFire All Stars Playoffs;Valorant
+Epicenter;Apex
+Grand Apex;Apex
+Dreamhack;CS:GO
+NBA;PUBG
+Tier 2 qualifications;PUBG
+Tier 3 qualifications;PUBG
+UEFA;Clash Royale
+PGN;Clash Royale
+KHL;Brawl Stars
+World Cup;Fortnite
+World Fortnite;Fortnite

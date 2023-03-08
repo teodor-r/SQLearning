@@ -1,0 +1,62 @@
+Найти клиентов, которые никогда не интересовались каким либо видом спорта
+
+Кол-во матчей каждого вида спорта для каждого букмекера за определенный период времени
+
+Процент побед по команде
+
+Среднее кол-во матчей в неделю для букмекера
+
+Запрос даты через регулярное выражение
+
+Умеем генерить спорт, буков, лиги, команды
+1)запрос
+выбрать какой-то матч, посмотреть, какие ещё букмекеры его реализуют, вывести список маркетов на это событие
+
+BEGIN
+	IF (1/kW + 1/kL) < 1 THEN
+		RETURN (1/kW + 1/kL);
+	ELSE
+    	RETURN 0;
+	END IF;
+END
+$$ LANGUAGE plpgsql;
+
+select "Match"."idMatch" , "Match"."NameBk", "Info"."StartT", "MarketWL"."koefW", "MarketWL"."koefL"
+from "Match"
+inner join "MarketWL"
+on "Match"."idMatch" = "MarketWL"."idMatch"
+inner join "Info"
+on "Match"."idMatch" = "Info"."idMatch"
+where "Match"."teamA" = 'Team Liquid' and "Match"."teamB" = 'Vici Gaming'
+order by "MarketWL"."koefW"
+
+CREATE FUNCTION refresh_forks() RETURNS SETOF ForkOnWL AS $$
+DECLARE
+    fork RECORD;
+BEGIN
+    RAISE NOTICE 'Refreshing all materialized views...';
+
+    FOR fork IN
+       SELECT n.nspname AS mv_schema,
+              c.relname AS mv_name,
+              pg_catalog.pg_get_userbyid(c.relowner) AS owner
+         FROM pg_catalog.pg_class c
+    LEFT JOIN pg_catalog.pg_namespace n ON (n.oid = c.relnamespace)
+        WHERE c.relkind = 'm'
+     ORDER BY 1
+    LOOP
+
+        -- Здесь "mviews" содержит одну запись с информацией о матпредставлении
+
+        RAISE NOTICE 'Refreshing materialized view %.% (owner: %)...',
+                     quote_ident(mviews.mv_schema),
+                     quote_ident(mviews.mv_name),
+                     quote_ident(mviews.owner);
+        EXECUTE format('REFRESH MATERIALIZED VIEW %I.%I', mviews.mv_schema, mviews.mv_name);
+    END LOOP;
+
+    RAISE NOTICE 'Done refreshing materialized views.';
+    RETURN 1;
+END;
+$$ LANGUAGE plpgsql;
+*/
